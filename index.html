@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="theme-color" content="#171713"> 
+  <title>ShopSphere | Considered Finds for Everyday Living</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css"> 
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script> 
+  <script src="script.js" defer></script> 
+</head> 
+<body> 
+  <div class="announcement">COMPLIMENTARY SHIPPING ON ORDERS ABOVE ₹2,999 <span>✦</span> THOUGHTFULLY CURATED, ALWAYS</div> 
+  <header class="navbar"> 
+    <a href="#home" class="logo">Shop<span>Sphere.</span></a> 
+    <nav aria-label="Main navigation"> 
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#collections">Collections</a><a href="#about">Our Story</a><a href="#track">Track Order</a> 
+    </nav> 
+    <div class="nav-actions"> 
+      <button class="icon-btn" id="searchBtn" aria-label="Focus search">⌕</button> 
+      <button class="icon-btn" id="wishlistBtn" aria-label="Show wishlist">♡ <span id="wishlistCount">0</span></button> 
+      <button class="bag-btn" id="cartBtn">Bag <span id="cartCount">0</span><span class="bag-icon">↗</span></button> 
+    </div> 
+  </header> 
+ 
+  <main> 
+    <section class="hero" id="home"> 
+      <div class="hero-shade"></div> 
+      <div class="hero-content"> 
+        <p class="eyebrow light">THE ART OF EVERYDAY LIVING</p> 
+        <h1>Find your kind<br>of <em>extraordinary.</em></h1> 
+        <p class="hero-description">A considered collection of pieces made to move with you, inspire you and make every day feel a little more special.</p> 
+        <a href="#shop" class="primary-btn">Explore the collection <span>↗</span></a> 
+      </div> 
+      <div class="hero-note"><span>01 / 04</span><span>CURATED WITH INTENTION</span></div> 
+    </section> 
+ 
+    <section class="intro-strip"> 
+      <span>GOOD DESIGN, BETTER EVERYDAY.</span><i>✳</i><span>THE LITTLE THINGS MATTER.</span><i>✳</i><span>MADE FOR YOUR MOMENTS.</span> 
+    </section> 
+ 
+    <section class="categories section-pad" id="collections"> 
+      <div class="section-top"> 
+        <div><p class="eyebrow">A WORLD OF DISCOVERY</p><h2>Shop by <em>mood.</em></h2></div> 
+        <p class="section-copy">From everyday essentials to the pieces that make a statement.</p> 
+      </div> 
+      <div class="category-grid"> 
+        <button class="category-card cat-fashion" data-category="Fashion"><span>01</span><strong>Fashion</strong><small>Everyday, elevated ↗</small></button> 
+        <button class="category-card cat-tech" data-category="Electronics"><span>02</span><strong>Technology</strong><small>Smart living starts here ↗</small></button> 
+        <button class="category-card cat-accessories" data-category="Accessories"><span>03</span><strong>Accessories</strong><small>The finishing touch ↗</small></button> 
+        <button class="category-card cat-lifestyle" data-category="Lifestyle"><span>04</span><strong>Living</strong><small>Make space for good things ↗</small></button> 
+      </div> 
+    </section> 
+ 
+    <section class="shop-section section-pad" id="shop"> 
+      <div class="section-top"> 
+        <div><p class="eyebrow">THE SHOPSPHERE EDIT</p><h2>Pieces to <em>love.</em></h2></div> 
+        <p class="section-copy">A fresh edit of useful, beautiful things. Find your next favourite.</p> 
+      </div> 
+      <div class="shop-toolbar"> 
+        <label class="search-wrap"><span>⌕</span><input type="search" id="searchInput" placeholder="Search the collection..." aria-label="Search products"></label> 
+        <div class="toolbar-right"> 
+          <select id="categoryFilter" aria-label="Filter by category"> 
+            <option value="all">All categories</option><option value="Fashion">Fashion</option><option value="Electronics">Electronics</option><option value="Accessories">Accessories</option><option value="Lifestyle">Lifestyle</option> 
+          </select> 
+          <select id="sortFilter" aria-label="Sort products"> 
+            <option value="default">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option> 
+          </select> 
+        </div> 
+      </div> 
+      <div class="results-line"><span id="resultsCount">24 pieces</span><button id="clearFilters" class="text-btn">Clear filters ×</button></div> 
+      <div class="product-grid" id="productGrid" aria-live="polite"></div> 
+    </section> 
+ 
+ 
+   <section class="tracking-section section-pad" id="track">
+     <div class="section-top">
+       <div><p class="eyebrow">YOUR ORDER, IN GOOD HANDS</p><h2>Track your <em>order.</em></h2></div>
+       <p class="section-copy">Enter your order reference and the phone number used at checkout to see its latest journey.</p>
+     </div>
+     <form class="tracking-search" id="trackingForm">
+       <label>Order reference<input id="trackingReference" required placeholder="e.g. SS123456789" autocomplete="off"></label>
+       <label>Phone number<input id="trackingPhone" required inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number"></label>
+       <button class="primary-btn" type="submit">Find my order <span>↗</span></button>
+     </form>
+     <div id="trackingResult" class="tracking-result" aria-live="polite"></div>
+     <p class="tracking-demo-note">Demo note: order and OTP data are stored in this browser only. No real SMS is sent. A production OTP flow needs a secure backend and an SMS provider.</p>
+   </section>
+\n   <section class="editorial"> 
+      <div class="editorial-image"></div> 
+      <div class="editorial-copy"><p class="eyebrow">LESS, BUT BETTER</p><h2>Keep what<br>moves you.</h2><p>We believe the best things earn their place in your life. Explore pieces chosen for their form, function and feeling.</p><a href="#shop" class="under-link">Discover the edit <span>↗</span></a></div> 
+    </section> 
+ 
+    <section class="about section-pad" id="about"> 
+      <p class="eyebrow">THE SHOPSPHERE PROMISE</p> 
+      <h2>Shopping should feel<br><em>extraordinary.</em></h2> 
+      <p>Quality finds. Thoughtful details. A smoother way to discover things you'll use and love.</p> 
+      <div class="promise-row"><div><b>01</b><span>Curated selection</span></div><div><b>02</b><span>Clear pricing</span></div><div><b>03</b><span>Careful delivery</span></div></div> 
+    </section> 
+  </main> 
+ 
+  <footer><div class="footer-top"><a href="#home" class="logo">Shop<span>Sphere.</span></a><p>Curated for everyday. Designed for everyone.</p><a href="#shop" class="under-link">Back to shopping ↑</a></div><div class="footer-bottom"><span>© 2026 ShopSphere. All rights reserved.</span><span>MADE FOR THE EVERYDAY.</span></div></footer> 
+ 
+  <div class="overlay" id="cartOverlay"></div> 
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true"> 
+    <div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your bag <span id="drawerCount">(0)</span></h2></div><button class="close-btn" id="closeCart" aria-label="Close bag">×</button></div> 
+    <div class="cart-items" id="cartItems"></div> 
+    <div class="drawer-foot"><div class="subtotal"><span>Subtotal</span><strong>₹<span id="cartTotal">0</span></strong></div><p class="shipping-note">Shipping and taxes calculated at checkout.</p><button class="primary-btn full-btn" id="checkoutBtn">Continue to checkout <span>↗</span></button><button class="continue-btn" id="continueShopping">Continue exploring</button></div> 
+  </aside> 
+ 
+  <div class="modal-backdrop" id="checkoutBackdrop"> 
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle"> 
+      <div class="checkout-head"><div><p class="eyebrow">ALMOST YOURS</p><h2 id="checkoutTitle">Checkout</h2></div><button class="close-btn" id="closeCheckout" aria-label="Close checkout">×</button></div> 
+      <div class="checkout-layout"> 
+        <form id="checkoutForm"> 
+          <h3>01   Delivery details</h3> 
+          <div class="form-grid"> 
+            <label class="field full">Full name<input name="name" autocomplete="name" required maxlength="80" placeholder="Your full name"></label> 
+            <label class="field">Phone number<input name="phone" type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" autocomplete="tel" required placeholder="10-digit mobile number"></label> 
+            <label class="field">Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label> 
+            <label class="field full">Flat, house no. and building<input name="address1" autocomplete="address-line1" required placeholder="House / flat / building"></label> 
+            <label class="field full">Street, area and landmark<input name="address2" autocomplete="address-line2" required placeholder="Street, locality, landmark"></label> 
+            <label class="field">City<input name="city" autocomplete="address-level2" required placeholder="City"></label> 
+            <label class="field">State<input name="state" autocomplete="address-level1" required placeholder="State"></label> 
+            <label class="field">PIN code<input name="pincode" inputmode="numeric" pattern="[1-9][0-9]{5}" maxlength="6" autocomplete="postal-code" required placeholder="6-digit PIN"></label> 
+            <label class="field">Delivery instructions <input name="instructions" maxlength="120" placeholder="Optional"></label> 
+          </div> 
+          <h3 class="payment-title">02   Payment method</h3> 
+          <label class="payment-option"><input type="radio" name="payment" value="cod" checked><span><b>Cash on Delivery</b><small>Pay when your order arrives</small></span><strong>COD</strong></label> 
+          <label class="payment-option"><input type="radio" name="payment" value="online"><span><b>Pay online securely</b><small>UPI, cards and net banking via Razorpay</small></span><strong>↗</strong></label> 
+          <p class="secure-note">Your details are used only to process this order. Online payment will be enabled after secure server-side gateway setup.</p> 
+          <button class="primary-btn full-btn place-order" type="submit" id="placeOrderBtn">Place order <span>↗</span></button> 
+          <p class="form-message" id="formMessage" role="alert"></p> 
+        </form> 
+        <aside class="order-summary"><h3>Your order</h3><div id="checkoutItems"></div><div class="summary-row"><span>Subtotal</span><strong id="checkoutSubtotal">₹0</strong></div><div class="summary-row"><span>Delivery</span><strong id="deliveryFee">Calculated at checkout</strong></div><div class="summary-total"><span>Estimated total</span><strong id="checkoutTotal">₹0</strong></div><p>Free delivery on orders above ₹2,999.</p></aside> 
+      </div> 
+    </section> 
+  </div> 
+ 
+  <div class="toast" id="toast" role="status"></div> 
+  <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-mark">✓</div><p class="eyebrow">ORDER RECEIVED</p><h2 id="successTitle">Thank you.</h2><p id="successMessage">Your order has been placed.</p><button class="primary-btn" id="successClose">Continue shopping ↗</button></div> 
+</body> 
+</html>
